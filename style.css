@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'Mermaid';
+    src: url('fonts/Mermaid.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: url(Images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, system-ui;
+    color: rgb(212, 169, 243);
+    height: 100%;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Mermaid', system-ui;
+    font-size: 75px;
+}
+
+#message {
+    text-align: center;
+    color: rgb(212, 169, 243);
+    font-family: 'Mermaid', system-ui, sans-serif;
+    /* font-size: */
+}
+
+aside#match-counter-one {
+    color: rgb(212, 169, 243);
+    float: left;
+    /* border: 1px solid black; */
+    padding: 10px;
+    width: 30%;  
+    min-height: 750px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Mermaid', system-ui, sans-serif;
+}
+
+aside#match-counter-two {
+    color: rgb(212, 169, 243);
+    float: right;
+    /* border: 1px solid black; */
+    padding: 10px;
+    width: 30%;  
+    min-height: 750px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Mermaid', system-ui, sans-serif;
+}
+
+main {
+    float: center;
+    /* width: 65%; */
+    /* border: 1px solid black; */
+    min-height: 850px;
+}
+
+#square-grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 650px;
+    gap: 15px;
+}
+
+.sqr {
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    background-color: rgba(48, 44, 44, 0.455);
+    background-image: url('Images/Seashell.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Ariel {
+    background-image: url('Images/Ariel.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Prince {
+    background-image: url('Images/Prince.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Scuttle {
+    background-image: url('Images/Scuttle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Triton {
+    background-image: url('Images/Triton.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Flounder {
+    background-image: url('Images/Flounder.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Sebastian {
+    background-image: url('Images/Sebastian.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Ursula {
+    background-image: url('Images/Ursula.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Flotsam-Jetsam {
+    background-image: url('Images/Flotsam-Jetsam.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+button {
+    font-family: 'Mermaid', system-ui, sans-serif;
+    color: rgba(48, 44, 44, 0.455);
+    background-color:  rgb(212, 169, 243);
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;   
+}
