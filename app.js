@@ -69,7 +69,7 @@ function shuffleCharacters(array) {
 
 function updateMessage() {
   if (winner) {
-      messageEl.textContent = `Congrats! ${winner} wins!`;
+      messageEl.textContent = `${winner} wins!`;
   } else if (tie) {
       messageEl.textContent = "It's a tie!";
   } else {
@@ -153,6 +153,7 @@ function resetGuesses() {
 
 squareEls.forEach(sqr => {
   sqr.addEventListener("click", handleSquareClick);
+  console.log(handleSquareClick)
 })
 
 resetBtnEl.addEventListener('click', init)

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Caveat&family=Danfo&family=Kablammo&family=Londrina+Sketch&display=swap');
 @font-face {
     font-family: 'Mermaid';
     src: url('fonts/Mermaid.otf') format('opentype');
@@ -10,77 +11,77 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: Arial, system-ui;
-    color: rgb(212, 169, 243);
+    font-family: 'Mermaid', system-ui;
+    color: rgb(77, 3, 130);
     height: 100%;
-    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0rem;
 }
 
 h1 {
     text-align: center;
     font-family: 'Mermaid', system-ui;
-    font-size: 75px;
+    font-size: 3rem; 
 }
 
 #message {
     text-align: center;
-    color: rgb(212, 169, 243);
-    font-family: 'Mermaid', system-ui, sans-serif;
-    /* font-size: */
+    color: rgb(127, 7, 95);
+    font-family: "Atma", system-ui, sans-serif !important;
+    font-size: 2rem !important;
+    margin-top: 2rem;
+
 }
 
-aside#match-counter-one {
-    color: rgb(212, 169, 243);
-    float: left;
-    /* border: 1px solid black; */
-    padding: 10px;
-    width: 30%;  
-    min-height: 750px;
+.match-counter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(127, 7, 95);
+    width: 100%;
+    max-width: 50rem;
+    font-size: 0.5rem;
     text-align: center;
-    font-size: 50px;
-    font-family: 'Mermaid', system-ui, sans-serif;
-}
-
-aside#match-counter-two {
-    color: rgb(212, 169, 243);
-    float: right;
-    /* border: 1px solid black; */
-    padding: 10px;
-    width: 30%;  
-    min-height: 750px;
-    text-align: center;
-    font-size: 50px;
-    font-family: 'Mermaid', system-ui, sans-serif;
+    font-family: "Atma", system-ui, sans-serif !important;
+    margin-top: -2rem; 
+    line-height: 0.25; 
+    
 }
 
 main {
-    float: center;
-    /* width: 65%; */
-    /* border: 1px solid black; */
-    min-height: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 45rem;
 }
 
 #square-grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 650px;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 30rem;
+    margin: -1rem 0;
 }
 
 .sqr {
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 150px;
-    border-radius: 30px;
-    background-color: rgba(48, 44, 44, 0.455);
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 1rem;
+    background-color: rgba(22, 21, 21, 0.7);
     background-image: url('Images/Seashell.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     color: #000;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .Ariel {
@@ -142,15 +143,87 @@ main {
 .button-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    margin-top: 1rem; 
 }
+
 button {
-    font-family: 'Mermaid', system-ui, sans-serif;
-    color: rgba(48, 44, 44, 0.455);
-    background-color:  rgb(212, 169, 243);
-    margin: 20px;
-    width: 200px;
-    height: 50px;
-    font-size: 30px;   
+    color: #C2A7E2;
+    font-family: "Atma", system-ui, sans-serif !important;
+    background-color: rgba(22, 21, 21, 0.96);
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 4rem;
+    }
+    #message {
+        font-size: 2rem;
+    }
+    .match-counter {
+        font-size: 2.5rem;
+    }
+    #square-grid-container {
+        max-width: 40rem;
+        gap: 1.5rem;
+    }
+    .sqr {
+        font-size: 2rem;
+        padding-top: 100%;
+    }
+    button {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    #message {
+        font-size: 1.75rem;
+    }
+    .match-counter {
+        font-size: 2rem;
+    }
+    #square-grid-container {
+        max-width: 35rem;
+    }
+    .sqr {
+        font-size: 1.75rem;
+        padding-top: 100%;
+    }
+    button {
+        font-size: 1.25rem;  
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    #message {
+        font-size: 1.5rem;
+        margin-top: 1rem; 
+    }
+    .match-counter {
+        font-size: 1.0rem;
+        margin-top: -2rem; 
+        line-height: 1rem; 
+    }
+    #square-grid-container {
+        gap: 0.5rem;
+        margin: -1rem 0;
+    }
+    .sqr {
+        font-size: 1.25rem;
+        padding-top: 100%;
+    }
+    button {
+        width: 100%;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
 }
