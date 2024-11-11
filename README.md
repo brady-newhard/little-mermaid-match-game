@@ -4,17 +4,17 @@ The Little Mermaid Match Game is a basic memory game inspired by my colorful 3.5
 ![LMMG Screenshot](./Images/Desktop-screenshot.jpg)
 
 ## Getting Started
-Click to Play:[The Little Mermaid Match Game](https://brady-newhard.github.io/little-mermaid-match-game/)
+Click to Play: [The Little Mermaid Match Game](https://brady-newhard.github.io/little-mermaid-match-game/)
 
 ### Wireframe
-![Wireframe](./Images/Memory Match Game-Layout.png)
+![Wireframe](./Images/Wireframe.jpg)
 
-## Attributions:
+## Attributions
 Little Mermaid Character Images:
-[pngeggegg](https://www.pngegg.com)
+[pngegg.com](https://www.pngegg.com)
 
 Seashell Image:
-[cricut](https://design.cricut.com/)
+[cricut.com](https://design.cricut.com/)
 
 The background image of a coral reef was generated using ChatGPT
 
