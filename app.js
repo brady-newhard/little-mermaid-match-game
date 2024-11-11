@@ -1,14 +1,11 @@
 /*-------------------------------- Constants --------------------------------*/
 
-const characters = 
-[
-  "Ariel", "Prince", "Scuttle", "Triton", "Flounder", 
-  "Sebastian", "Ursula", "Flotsam-Jetsam", "Ariel", "Prince", "Scuttle", 
-  "Triton", "Flounder", "Sebastian", "Ursula", "Flotsam-Jetsam"
-];
-  
-// console.log(characters)
-//console.log(shuffleCharacters(characters))
+const characters =
+  [
+    "Ariel", "Prince", "Scuttle", "Triton", "Flounder",
+    "Sebastian", "Ursula", "Flotsam-Jetsam", "Ariel", "Prince", "Scuttle",
+    "Triton", "Flounder", "Sebastian", "Ursula", "Flotsam-Jetsam"
+  ];
 
 /*-------------------------------- Variables --------------------------------*/
 
@@ -29,14 +26,12 @@ const messageEl = document.getElementById("message");
 const player1Count = document.getElementById("player1-count");
 const player2Count = document.getElementById("player2-count");
 const resetBtnEl = document.querySelector("button");
+const instructions = document.querySelector(".instructions");
 
 /*-------------------------------- Functions --------------------------------*/
 
-//console.log("Ready to Initialize")
-
 function init() {
   board = shuffleCharacters([...characters]);
-  //console.log(board)
   turn = "Player 1";
   firstGuess = null;
   secondGuess = null;
@@ -49,88 +44,80 @@ function init() {
   player1Count.innerText = 0
   player2Count.innerText = 0
 
-  squareEls.forEach((sqr, index) => {  
-    sqr.className = "sqr";  
-    sqr.dataset.character = board[index];  
+  squareEls.forEach((sqr, index) => {
+    sqr.className = "sqr";
+    sqr.dataset.character = board[index];
   });
   updateMessage();
 }
-
-init(); 
+init();
 
 function shuffleCharacters(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
-  //console.log("Shuffled Characters:", array)
   return array;
 }
 
 function updateMessage() {
   if (winner) {
-      messageEl.textContent = `${winner} wins!`;
+    messageEl.textContent = `${winner} wins!`;
   } else if (tie) {
-      messageEl.textContent = "It's a tie!";
+    messageEl.textContent = "It's a tie!";
   } else {
-      messageEl.textContent = `${turn}'s Turn!`;
+    messageEl.textContent = `${turn}'s Turn!`;
   }
-
   player1Count.innerText = matchScoreP1;
   player2Count.innerText = matchScoreP2;
 }
 
+function handleInstructionClick() {
+  instructions.classList.toggle("show-description");
+}
+
 function handleSquareClick(event) {
-  const square = event.target; 
-    if (square.classList.contains("matched") || square === firstGuess) return; 
-  
-    square.classList.add(square.dataset.character);  
-    //console.log("Clicked: ",square.dataset.character)
-    
-    if (!firstGuess) {
-      firstGuess = square;
-      //console.log("First Guess: ", square.dataset.character)
-    } else {
-      secondGuess = square;
-      //console.log("Second Guess: ", square.dataset.character)
-      checkForMatch();
+  const square = event.target;
+  if (square.classList.contains("matched") || square === firstGuess) return;
+  square.classList.add(square.dataset.character);
+  if (!firstGuess) {
+    firstGuess = square;
+  } else {
+    secondGuess = square;
+    checkForMatch();
   }
 }
 
 function checkForMatch() {
-  if (firstGuess.dataset.character === secondGuess.dataset.character) { 
-    //console.log(firstGuess.dataset.character)
-    //console.log(secondGuess.dataset.character)
-    firstGuess.classList.add("matched"); 
-    secondGuess.classList.add("matched"); 
+  if (firstGuess.dataset.character === secondGuess.dataset.character) {
+    firstGuess.classList.add("matched");
+    secondGuess.classList.add("matched");
     matches++;
-    //console.log(matches)
-    if (turn === "Player 1") { 
+    if (turn === "Player 1") {
       matchScoreP1++;
     } else {
       matchScoreP2++;
     }
-    //console.log(matchScoreP1, matchScoreP2)
-      checkForWinner();
-      resetGuesses();
+    checkForWinner();
+    resetGuesses();
   } else {
     setTimeout(() => {
-      firstGuess.classList.remove(firstGuess.dataset.character); 
+      firstGuess.classList.remove(firstGuess.dataset.character);
       secondGuess.classList.remove(secondGuess.dataset.character);
-        resetGuesses();
-        switchTurn();
-        updateMessage();
+      resetGuesses();
+      switchTurn();
+      updateMessage();
     }, 500);
-}
-updateMessage();
+  }
+  updateMessage();
 }
 
 function checkForWinner() {
-  if (matches === characters.length / 2) { 
-    if (matchScoreP1 === matchScoreP2) { 
-      tie = true; 
+  if (matches === characters.length / 2) {
+    if (matchScoreP1 === matchScoreP2) {
+      tie = true;
     } else {
-      winner = matchScoreP1 > matchScoreP2 ? "Player 1" : "Player 2"; 
+      winner = matchScoreP1 > matchScoreP2 ? "Player 1" : "Player 2";
       tie = false;
     }
   }
@@ -141,7 +128,6 @@ function switchTurn() {
   if (!winner) {
     turn = turn === "Player 1" ? "Player 2" : "Player 1";
   }
-  //console.log(turn)
 }
 
 function resetGuesses() {
@@ -154,5 +140,7 @@ function resetGuesses() {
 squareEls.forEach(sqr => {
   sqr.addEventListener("click", handleSquareClick);
 })
+
+instructions.addEventListener('click', handleInstructionClick);
 
 resetBtnEl.addEventListener('click', init);
