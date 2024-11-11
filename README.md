@@ -24,6 +24,7 @@ The background image of a coral reef was generated using ChatGPT
 - JavaScript
 
 ## Future Enhancement
+- Make a trident cursor
 - Add a timer and create a point system that awards more points for faster matches.
 - Develop a leaderboard
 - Improve accessibility to create a more visually impaired-friendly experience.
