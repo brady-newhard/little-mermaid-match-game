@@ -120,7 +120,7 @@ function checkForMatch() {
         resetGuesses();
         switchTurn();
         updateMessage();
-    }, 1000);
+    }, 500);
 }
 updateMessage();
 }
@@ -153,7 +153,6 @@ function resetGuesses() {
 
 squareEls.forEach(sqr => {
   sqr.addEventListener("click", handleSquareClick);
-  console.log(handleSquareClick)
 })
 
-resetBtnEl.addEventListener('click', init)
+resetBtnEl.addEventListener('click', init);

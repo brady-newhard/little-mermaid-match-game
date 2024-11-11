@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Caveat&family=Danfo&family=Kablammo&family=Londrina+Sketch&display=swap');
 @font-face {
     font-family: 'Mermaid';
@@ -201,6 +203,9 @@ button {
 }
 
 @media (max-width: 767px) {
+    html {
+        height: 100%;
+    }
     h1 {
         font-size: 2.5rem;
     }
